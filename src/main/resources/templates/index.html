@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Osman Berke Ülger | Portfolio</title>
+
+  <link rel="stylesheet"
+        th:href="@{/css/style.css}"
+        href="/css/style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="container nav-content">
+
+    <a href="#home" class="logo">
+      Osman<span>.</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+  </div>
+</nav>
+
+
+<main>
+
+  <!-- HERO -->
+
+  <section id="home" class="hero">
+
+    <div class="container hero-grid">
+
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          Hello, I'm
+        </p>
+
+        <h1>
+          Osman Berke Ülger
+        </h1>
+
+        <h2>
+          Computer Engineering Student
+        </h2>
+
+        <p class="hero-description">
+          Final-year Computer Engineering student interested in
+          full-stack development, mobile applications and cloud technologies.
+          I enjoy developing complete applications and learning how
+          different parts of software systems work together.
+        </p>
+
+        <div class="hero-info">
+
+                    <span>
+                        📍 Yalova, Turkey
+                    </span>
+
+          <span>
+                        ✉️ oberul.1ger@gmail.com
+                    </span>
+
+        </div>
+
+        <div class="hero-buttons">
+
+          <a href="#projects"
+             class="btn btn-primary">
+            View Projects
+          </a>
+
+          <a href="/css/cv/Osman-Berke-Ulger-CV.pdf"
+             class="btn btn-outline"
+             target="_blank">
+            View CV
+          </a>
+
+          <a href="https://www.linkedin.com/in/osman-berke-%C3%BClger-518819218"
+             class="btn btn-outline"
+             target="_blank"
+             rel="noopener noreferrer">
+            LinkedIn
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-image-wrapper">
+
+        <img src="/css/images/profile.jpg"
+             alt="Osman Berke Ülger"
+             class="hero-image">
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about" class="section section-alt">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        About Me
+      </h2>
+
+      <p class="section-description">
+        I am a final-year Computer Engineering student at Karabük University.
+        My main interests include full-stack development, mobile applications,
+        backend systems and cloud technologies.
+        I have developed projects using technologies such as Angular,
+        Spring Boot, PostgreSQL, Kotlin and ASP.NET Core.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section id="skills" class="section">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Technical Skills
+      </h2>
+
+      <p class="section-description">
+        Technologies and tools I have worked with during academic,
+        internship and personal projects.
+      </p>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3>Backend</h3>
+          <p>
+            Java, Spring Boot, Spring Security,
+            Spring Data JPA, Hibernate,
+            ASP.NET Core, REST APIs
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Frontend</h3>
+          <p>
+            Angular, React, TypeScript,
+            JavaScript, HTML, CSS
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Mobile</h3>
+          <p>
+            Kotlin, Android,
+            Jetpack Compose,
+            Retrofit, Flutter
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Database</h3>
+          <p>
+            PostgreSQL,
+            Redis,
+            SQL
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Cloud & DevOps</h3>
+          <p>
+            Docker,
+            Docker Compose,
+            AWS,
+            CDN Services
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Security</h3>
+          <p>
+            JWT,
+            HttpOnly Cookies,
+            Role-Based Access Control
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Data & AI</h3>
+          <p>
+            Python,
+            AI / Machine Learning,
+            Data Analysis,
+            Power BI,
+            DAX
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- EXPERIENCE -->
+
+  <section id="experience" class="section section-alt">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Experience
+      </h2>
+
+      <div class="timeline">
+
+        <article class="experience-card">
+
+          <div class="experience-header">
+
+            <div>
+              <h3>Karabük University</h3>
+              <strong>Intern</strong>
+            </div>
+
+            <span class="date">
+                            July 2025
+                        </span>
+
+          </div>
+
+          <p>
+            Developed an AI-driven web application that predicts
+            the growth probability of agricultural products
+            in different locations in Turkey using fertilizer,
+            temperature and soil parameters.
+          </p>
+
+        </article>
+
+
+        <article class="experience-card">
+
+          <div class="experience-header">
+
+            <div>
+              <h3>Karabük Teknokent A.Ş.</h3>
+              <strong>Intern</strong>
+            </div>
+
+            <span class="date">
+                            Sep 2024 – Jan 2025
+                        </span>
+
+          </div>
+
+          <p>
+            Worked on a web portal concept designed to support
+            data exchange between companies and Technopark management.
+          </p>
+
+        </article>
+
+
+        <article class="experience-card">
+
+          <div class="experience-header">
+
+            <div>
+              <h3>enoca</h3>
+              <strong>Frontend Developer Intern</strong>
+            </div>
+
+            <span class="date">
+                            Aug 2024 – Sep 2024
+                        </span>
+
+          </div>
+
+          <p>
+            Developed dynamic Angular and TypeScript applications
+            that consumed real-time movie and news data from external APIs,
+            using component-based architecture and asynchronous data processing.
+          </p>
+
+        </article>
+
+
+        <article class="experience-card">
+
+          <div class="experience-header">
+
+            <div>
+              <h3>Nebula Innovators</h3>
+              <strong>Project Contributor</strong>
+            </div>
+
+            <span class="date">
+                            Feb 2025 – Apr 2025
+                        </span>
+
+          </div>
+
+          <p>
+            Worked on a website project in collaboration
+            with a university partner club.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS -->
+
+  <section id="projects" class="section">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Featured Project
+      </h2>
+
+      <article class="project-card">
+
+        <h3>
+          Bundle – Online Learning Platform
+        </h3>
+
+        <p>
+          Developed a scalable online learning platform with
+          student, instructor and administrator roles.
+
+          The system includes course management,
+          video uploading and streaming,
+          shopping cart and purchasing,
+          learning progress tracking,
+          reviews, notifications and certificate generation.
+
+          Authentication and authorization were implemented
+          using JWT, HttpOnly cookies and RBAC.
+        </p>
+
+        <div class="tags">
+
+          <span class="tag">Angular</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Kotlin</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Redis</span>
+          <span class="tag">Kafka</span>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- EDUCATION -->
+
+  <section id="education" class="section section-alt">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Education
+      </h2>
+
+      <div class="education-card">
+
+        <h3>
+          Karabük University
+        </h3>
+
+        <p>
+          Computer Engineering
+        </p>
+
+        <p>
+          2021 – Present
+        </p>
+
+        <p>
+          GPA: 2.73
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact" class="section">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Contact
+      </h2>
+
+      <p class="section-description">
+        Feel free to contact me for internship,
+        software development or collaboration opportunities.
+      </p>
+
+      <div class="contact-grid">
+
+        <a class="contact-item"
+           href="mailto:oberul.1ger@gmail.com">
+
+          <span>Email</span>
+
+          oberul.1ger@gmail.com
+
+        </a>
+
+
+        <a class="contact-item"
+           href="https://www.linkedin.com/in/osman-berke-%C3%BClger-518819218"
+           target="_blank"
+           rel="noopener noreferrer">
+
+          <span>LinkedIn</span>
+
+          Osman Berke Ülger
+
+        </a>
+
+
+        <div class="contact-item">
+
+          <span>Location</span>
+
+          Yalova, Turkey
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+
+    © 2026 Osman Berke Ülger
+
+  </div>
+
+</footer>
+
+</body>
+</html>
