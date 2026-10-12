@@ -18,14 +18,12 @@ jobs:
     steps:
       - name: Configure SSH
         run: |
-          mkdir -p ~/.ssh
-          chmod 700 ~/.ssh
-
-          printf '%s\n' "${{ secrets.HETZNER_SSH_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-
-          printf '%s\n' "${{ secrets.HETZNER_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
-          chmod 600 ~/.ssh/known_hosts
+          mkdir -p "$HOME/.ssh"
+          chmod 700 "$HOME/.ssh"
+          printf '%s\n' "${{ secrets.HETZNER_SSH_KEY }}" > "$HOME/.ssh/id_ed25519"
+          chmod 600 "$HOME/.ssh/id_ed25519"
+          printf '%s\n' "${{ secrets.HETZNER_KNOWN_HOSTS }}" > "$HOME/.ssh/known_hosts"
+          chmod 600 "$HOME/.ssh/known_hosts"
 
       - name: Deploy tested commit to staging
         env:
@@ -33,39 +31,19 @@ jobs:
           USER: ${{ secrets.HETZNER_USER }}
           COMMIT_SHA: ${{ github.event.workflow_run.head_sha }}
         run: |
-          ssh -i ~/.ssh/id_ed25519 \
+          ssh -i "$HOME/.ssh/id_ed25519" \
             -o IdentitiesOnly=yes \
             -o StrictHostKeyChecking=yes \
-            "$USER@$HOST" \
-            "COMMIT_SHA='$COMMIT_SHA' bash -s" <<'REMOTE'
+            "$USER@$HOST" "
               set -e
-
               cd /opt/osman-berke-portfolio
-
               git fetch origin
-              git checkout "$COMMIT_SHA"
-
-              docker build \
-                -t "osman-berke-portfolio:$COMMIT_SHA" \
-                .
-
+              git checkout '$COMMIT_SHA'
+              docker build -t 'osman-berke-portfolio:$COMMIT_SHA' .
               docker rm -f osman-berke-portfolio-staging 2>/dev/null || true
-
-              docker run -d \
-                --name osman-berke-portfolio-staging \
-                -p 127.0.0.1:8081:8080 \
-                --restart unless-stopped \
-                "osman-berke-portfolio:$COMMIT_SHA"
-
+              docker run -d --name osman-berke-portfolio-staging -p 127.0.0.1:8081:8080 --restart unless-stopped 'osman-berke-portfolio:$COMMIT_SHA'
               sleep 8
-
-              curl --fail --silent \
-                http://127.0.0.1:8081 \
-                > /dev/null
-
-              docker tag \
-                "osman-berke-portfolio:$COMMIT_SHA" \
-                osman-berke-portfolio:staging
-
-              echo "Staging deployment successful: $COMMIT_SHA"
-REMOTE
+              curl --fail --silent 127.0.0.1:8081 > /dev/null
+              docker tag 'osman-berke-portfolio:$COMMIT_SHA' osman-berke-portfolio:staging
+              echo 'Staging deployment successful: $COMMIT_SHA'
+            "
