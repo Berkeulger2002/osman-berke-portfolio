@@ -38,7 +38,7 @@ jobs:
               set -e
               cd /opt/osman-berke-portfolio
               git fetch origin
-              git checkout '$COMMIT_SHA'
+              git checkout -f '$COMMIT_SHA'
               docker build -t 'osman-berke-portfolio:$COMMIT_SHA' .
               docker rm -f osman-berke-portfolio-staging 2>/dev/null || true
               docker run -d --name osman-berke-portfolio-staging -p 127.0.0.1:8081:8080 --restart unless-stopped 'osman-berke-portfolio:$COMMIT_SHA'
